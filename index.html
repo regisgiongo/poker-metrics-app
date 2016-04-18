@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pocker Metrics</title>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs top-gutter" role="tablist">
+          <li class="active"><a href="#" aria-controls="home" role="tab" data-toggle="tab">Dashboard</a></li>
+          <li><a href="#" role="tab" data-toggle="tab">Bonatti</a></li>
+          <li><a href="#" role="tab" data-toggle="tab">Cleiton</a></li>
+          <li><a href="#" role="tab" data-toggle="tab">Negherbon</a></li>
+        </ul>
+
+        <div class="row">
+          <div class="col-md-12">
+            <article id="pointsPerSprintChart"></article>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/graphics.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(initialize);
+
+      function initialize() {
+        Graphic.pointsPerSprint('pointsPerSprintChart');
+      }
+    </script>
+  </body>
+</html>

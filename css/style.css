@@ -1,0 +1,10 @@
+.top-gutter {
+  margin-top: 20px;
+}
+
+/**
+* Charts
+**/
+#pointsPerSprintChart {
+  height: 400px;
+}
