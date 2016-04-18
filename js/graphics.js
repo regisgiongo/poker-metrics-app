@@ -1,4 +1,4 @@
-var API = 'http://pocker-metrics.localhost:3000';
+var API = 'http://poker-metrics.localhost:3000';
 var Graphic = {};
 
 Graphic.pointsPerSprint = function pointsPerSprint(target) {
