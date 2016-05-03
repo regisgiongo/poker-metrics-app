@@ -48,6 +48,29 @@ Graphic.pointsPerEndpoint = function pointsPerEndpoint(target) {
   }
 };
 
+Graphic.pointsPerEndpointGrouped = function pointsPerEndpointGrouped(target) {
+  $.getJSON(API + '/endpoints/grouped', onGetData);
+
+  function onGetData(endpoints) {
+    var arr = objectToArray(endpoints);
+    arr.unshift(['endpoint name', 'points']);
+    var data = google.visualization.arrayToDataTable(arr);
+    var options = {
+      title: 'Endpoints Grouped Points',
+      curveType: 'function',
+      legend: { position: 'bottom' },
+      vAxis: {
+        viewWindow: {
+          min: 0,
+          max: 100
+        }
+      }
+    }
+    var chart = new google.visualization.ColumnChart(document.getElementById(target));
+    chart.draw(data, options);
+  }
+};
+
 function objectToArray(obj) {
   return Object.keys(obj).map(function(key) { return [key, obj[key]];  });
 }

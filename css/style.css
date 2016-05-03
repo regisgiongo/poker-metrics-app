@@ -5,7 +5,6 @@
 /**
 * Charts
 **/
-#pointsPerSprintChart,
-#pointsPerEndpointChart {
+.chart {
   height: 400px;
 }

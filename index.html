@@ -18,8 +18,9 @@
 
         <div class="row">
           <div class="col-md-12">
-            <article id="pointsPerSprintChart"></article>
-            <article id="pointsPerEndpointChart"></article>
+            <article id="pointsPerSprintChart" class="chart"></article>
+            <article id="pointsPerEndpointChart" class="chart"></article>
+            <article id="pointsPerEndpointGroupedChart" class="chart"></article>
           </div>
         </div>
       </div>
@@ -36,6 +37,7 @@
       function initialize() {
         Graphic.pointsPerSprint('pointsPerSprintChart');
         Graphic.pointsPerEndpoint('pointsPerEndpointChart');
+        Graphic.pointsPerEndpointGrouped('pointsPerEndpointGroupedChart');
       }
     </script>
   </body>
