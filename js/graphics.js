@@ -1,5 +1,5 @@
 'use strict';
-var API = 'http://poker-metrics.localhost:3000';
+var API = (isProductionMode()) ? 'http://pokerapi-contaazul.rhcloud.com' : 'http://poker-metrics.localhost:3000';
 var Graphic = {};
 
 Graphic.pointsPerSprint = function pointsPerSprint(target) {
@@ -73,4 +73,8 @@ Graphic.pointsPerEndpointGrouped = function pointsPerEndpointGrouped(target) {
 
 function objectToArray(obj) {
   return Object.keys(obj).map(function(key) { return [key, obj[key]];  });
+}
+
+function isProductionMode() {
+  return ENVIRONMENT === 'production';
 }
