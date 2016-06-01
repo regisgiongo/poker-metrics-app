@@ -1,9 +1,9 @@
 'use strict';
-var API = (isProductionMode()) ? 'http://pokerapi-contaazul.rhcloud.com' : 'http://poker-metrics.localhost:3000';
+var API = 'http://localhost:3000/';
 var Graphic = {};
 
-Graphic.pointsPerSprint = function pointsPerSprint(target) {
-  $.getJSON(API + '/issues', onGetData);
+Graphic.pointsPerSprint = function pointsPerSprint(team, target) {
+  $.getJSON(API + team + '/issues', onGetData);
 
   function onGetData(issues) {
     var arr = objectToArray(issues);
@@ -25,8 +25,8 @@ Graphic.pointsPerSprint = function pointsPerSprint(target) {
   }
 };
 
-Graphic.pointsPerEndpoint = function pointsPerEndpoint(target) {
-  $.getJSON(API + '/endpoints', onGetData);
+Graphic.pointsPerEndpoint = function pointsPerEndpoint(team, target) {
+  $.getJSON(API + team + '/endpoints', onGetData);
 
   function onGetData(endpoints) {
     var arr = objectToArray(endpoints);
@@ -48,8 +48,8 @@ Graphic.pointsPerEndpoint = function pointsPerEndpoint(target) {
   }
 };
 
-Graphic.pointsPerEndpointGrouped = function pointsPerEndpointGrouped(target) {
-  $.getJSON(API + '/endpoints/grouped', onGetData);
+Graphic.pointsPerEndpointGrouped = function pointsPerEndpointGrouped(team, target) {
+  $.getJSON(API + team + '/endpoints/grouped', onGetData);
 
   function onGetData(endpoints) {
     var arr = objectToArray(endpoints);
@@ -73,8 +73,4 @@ Graphic.pointsPerEndpointGrouped = function pointsPerEndpointGrouped(target) {
 
 function objectToArray(obj) {
   return Object.keys(obj).map(function(key) { return [key, obj[key]];  });
-}
-
-function isProductionMode() {
-  return ENVIRONMENT === 'production';
 }
