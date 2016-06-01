@@ -10,10 +10,8 @@
       <div class="container">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs top-gutter" role="tablist">
-          <li class="active"><a href="#" aria-controls="home" role="tab" data-toggle="tab">Dashboard</a></li>
-          <li><a href="#" role="tab" data-toggle="tab">Bonatti</a></li>
-          <li><a href="#" role="tab" data-toggle="tab">Cleiton</a></li>
-          <li><a href="#" role="tab" data-toggle="tab">Negherbon</a></li>
+          <li class="active"><a href="#" data-team="alcatraz" aria-controls="home" role="tab" data-toggle="tab">Alcatraz</a></li>
+          <li><a href="#" role="tab" data-team="404" data-toggle="tab">404</a></li>
         </ul>
 
         <div class="row">
@@ -30,15 +28,7 @@
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/graphics.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(initialize);
+    <script type="text/javascript" src="js/main.js"></script>
 
-      function initialize() {
-        Graphic.pointsPerSprint('pointsPerSprintChart');
-        Graphic.pointsPerEndpoint('pointsPerEndpointChart');
-        Graphic.pointsPerEndpointGrouped('pointsPerEndpointGroupedChart');
-      }
-    </script>
   </body>
 </html>
