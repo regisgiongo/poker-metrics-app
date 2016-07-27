@@ -35,13 +35,7 @@ Graphic.pointsPerEndpoint = function pointsPerEndpoint(team, target) {
     var options = {
       title: 'Endpoints Points',
       curveType: 'function',
-      legend: { position: 'bottom' },
-      vAxis: {
-        viewWindow: {
-          min: 0,
-          max: 100
-        }
-      }
+      legend: { position: 'bottom' }
     }
     var chart = new google.visualization.ColumnChart(document.getElementById(target));
     chart.draw(data, options);
@@ -58,13 +52,7 @@ Graphic.pointsPerEndpointGrouped = function pointsPerEndpointGrouped(team, targe
     var options = {
       title: 'Endpoints Grouped Points',
       curveType: 'function',
-      legend: { position: 'bottom' },
-      vAxis: {
-        viewWindow: {
-          min: 0,
-          max: 100
-        }
-      }
+      legend: { position: 'bottom' }
     }
     var chart = new google.visualization.ColumnChart(document.getElementById(target));
     chart.draw(data, options);
