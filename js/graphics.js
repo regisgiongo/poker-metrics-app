@@ -48,7 +48,6 @@ Graphic.pointsPerEndpointGrouped = function pointsPerEndpointGrouped(team, targe
   function onGetData(endpoints) {
     var arr = objectToArray(endpoints);
     arr.unshift(['endpoint name', 'points']);
-    console.log(arr);
     var data = google.visualization.arrayToDataTable(renameEndpointGroupedColumn(arr));
     var options = {
       title: 'Endpoints Grouped Points',
