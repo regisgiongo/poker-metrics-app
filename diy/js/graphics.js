@@ -1,5 +1,5 @@
 'use strict';
-var API = 'http://pokerapi-contaazul.rhcloud.com/';
+var API = 'http://localhost:3000/';
 var Graphic = {};
 
 Graphic.pointsPerSprint = function pointsPerSprint(team, target) {
@@ -48,7 +48,7 @@ Graphic.pointsPerEndpointGrouped = function pointsPerEndpointGrouped(team, targe
   function onGetData(endpoints) {
     var arr = objectToArray(endpoints);
     arr.unshift(['endpoint name', 'points']);
-    var data = google.visualization.arrayToDataTable(arr);
+    var data = google.visualization.arrayToDataTable(renameEndpointGroupedColumn(arr));
     var options = {
       title: 'Endpoints Grouped Points',
       curveType: 'function',
@@ -56,6 +56,15 @@ Graphic.pointsPerEndpointGrouped = function pointsPerEndpointGrouped(team, targe
     }
     var chart = new google.visualization.ColumnChart(document.getElementById(target));
     chart.draw(data, options);
+  }
+
+  function renameEndpointGroupedColumn(arr){
+    for(var i = 0; i < arr.length; i++ ){
+      if(arr[i][0] === 'marketing'){
+        arr[i][0] = 'outros';
+      }
+    }
+    return arr;
   }
 };
 
