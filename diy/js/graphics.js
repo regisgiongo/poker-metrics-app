@@ -1,5 +1,5 @@
 'use strict';
-var API = 'http://localhost:3000/';
+var API = 'http://pokerapi-contaazul.rhcloud.com/';
 var Graphic = {};
 
 Graphic.pointsPerSprint = function pointsPerSprint(team, target) {
