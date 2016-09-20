@@ -6,7 +6,7 @@
   google.charts.setOnLoadCallback(initialize);
 
   function initialize() {
-    loadGraphs('alcatraz');
+    loadGraphs('accountancy');
 
     $('.nav-tabs a').click(function(){
       var team = $(this).data('team');
