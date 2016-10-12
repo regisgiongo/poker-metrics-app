@@ -1,0 +1,23 @@
+{
+  "name": "Metrics",
+  "description": "Sprint Metrics",
+  "main": "index.html",
+  "authors": [
+    "ContaAzul"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/negherbon/poker-metrics-app",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "moment": "^2.15.1",
+    "moment-timezone": "^0.5.6"
+  }
+}

@@ -8,3 +8,7 @@
 .chart {
   height: 400px;
 }
+
+.vertical-offset-1 {
+  margin-top: 10px;
+}

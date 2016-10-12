@@ -2,17 +2,40 @@
 <html>
   <head>
     <title>Pocker Metrics</title>
-    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
     <main>
       <div class="container">
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs top-gutter" role="tablist">
-          <li class="active"><a href="#" data-team="accountancy" aria-controls="home" role="tab" data-toggle="tab">Contabilidade</a></li>
-          <li><a href="#" data-team="alcatraz" aria-controls="home" role="tab" data-toggle="tab">Alcatraz</a></li>
-          <li><a href="#" role="tab" data-team="404" data-toggle="tab">404</a></li>
+        <article>
+          <form class="form-inline vertical-offset-1">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="form-group">
+                  <label for="startDate">Data inicial: </label>
+                  <input type="date" class="form-control" id="startDate">
+                </div>
+                <div class="form-group">
+                  <label for="endDate">Data final: </label>
+                  <input type="date" class="form-control" id="endDate">
+                </div>
+                <button type="button" class="btn btn-default" onclick="searchPerPeriod()">Pesquisar</button>
+              </div>
+            </div>
+          </form>
+        </article>
+
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a href="#accountancy" role="tab" data-toggle="tab" onclick="changeToTeam('accountancy')">Contabilidade</a>
+          </li>
+          <li>
+            <a href="#alcatraz" role="tab" data-toggle="tab" onclick="changeToTeam('alcatraz')">Alcatraz</a>
+          </li>
+          <li>
+            <a href="#404" role="tab" data-toggle="tab" onclick="changeToTeam('404')">404</a>
+          </li>
         </ul>
 
         <div class="row">
@@ -26,10 +49,12 @@
     </main>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/graphics.js?version=1"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="bower_components/moment-timezone/builds/moment-timezone.min.js"></script>
+    <script type="text/javascript" src="js/Util.js"></script>
+    <script type="text/javascript" src="js/Graphic.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-
   </body>
 </html>
